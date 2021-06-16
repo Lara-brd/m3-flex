@@ -1,0 +1,321 @@
+
+*{
+    margin:0;
+    padding: 0;
+}
+
+html{
+    box-sizing:border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    color:grey;
+    font-family: 'Montserrat', sans-serif;
+}
+
+main {
+    display:grid;
+    background-color: white;
+    grid-column-gap: 10px;
+    grid-row-gap: 20px;
+    padding: 10px;
+    max-width: 90%;
+    margin: 50px auto;
+}
+
+main > * {
+    background-color: #b3b3b370;
+    text-align: center;
+    padding: 10px;
+}
+
+.item {
+    padding:6px;
+
+}
+
+
+
+/*************HEADER**********************************************************************************************************/
+
+
+header {
+    display:grid;
+    grid-template-rows: 1fr, 1fr;
+    grid-gap: 5px;
+    background-image: url(assets/fonscapçalera.jpg);
+    background-size:cover;
+    background-position: center;
+    background-repeat:no-repeat;
+
+}
+
+header nav {
+    display:grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 3fr 1fr;  
+    padding: 10px;  
+}
+
+.logo img {
+    width: 50px;
+}
+
+header .menu ul{
+    display:flex;
+    list-style: none;
+    font-size: 0.8rem;
+}
+.menu ul li {
+    padding: 8px;
+}
+
+/*****rollover-menu*****/
+
+a{
+    text-decoration: none;
+    color:rgb(144, 144, 144);
+    border-bottom:2px solid transparent;
+    padding: 0 5px;
+    transition:all 0.3s ease;
+}
+.menu a:hover{
+    border-bottom:2px solid pink;
+    padding-bottom:10px;
+}
+.fas:hover,
+.far:hover{
+    color:black;
+}
+
+
+.inicio::after{
+    content:" Inicio";
+}
+.rutas::after{
+    content:" Rutas";
+}
+.hoteles::after{
+    content:" Hoteles";
+}
+.vuelos::after{
+    content:" Vuelos";
+}
+.contacto::after{
+    content:" Contacto";
+}
+
+/*************************/
+
+header h1{
+    top:100px;
+    bottom:0;
+    font-size: 1.5rem;
+    top:-20px;
+    color:rgba(255, 34, 52, 0.4);
+}
+
+header .redes {
+    display:grid;
+    grid-template-rows: 1fr 1fr;
+    font-size:.8rem;
+} 
+
+/*****rollover-redes*****/
+
+.facebook:hover,
+.twitter:hover{
+    color:#3b5998;
+    transform: scale(1.5);
+}
+.twitter:hover{
+    color: #00acee;
+}
+
+/**********************/
+
+.header-inf {
+    padding: 10px;
+}
+
+
+
+
+
+
+/************CONTENT********************************************************************/
+
+.content {
+    display:grid;
+    grid-template-columns: 70% 30%;
+
+}
+
+.content article {
+    display:grid;
+    grid-gap: 10px;
+    grid-gap: 10px;
+    margin-right: 10px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.content article .item {
+    background-color:#74b9ff;
+}
+
+.content article .item:last-child {
+    grid-column: 1/ 3;
+}
+
+article .contenido-art{
+    position:absolute;
+    bottom:0px;
+    width:100%;
+    padding:0;
+    text-align: left;
+    color:#F8F8F8;
+}
+
+.contenido-art .titulo{
+    text-transform: uppercase;
+    background-color: #F73F52;
+    padding: 10px 0 0 0;
+    margin-bottom:0;  
+}
+
+article .titulo,
+article .data {
+    line-height:.8rem;
+}
+
+article .texto,
+article a{
+    display:inline-block;
+    background-color:#F8F8F8;
+    font-weight:500;
+    font-size: 0.9rem;
+    padding: 15px;
+    width: 100%;
+}
+
+article a:hover {
+    color:#F73F52;
+}
+
+article .texto {
+    color: rgba(63, 63, 63, 0.719);
+}
+
+
+/*Aside*/
+
+aside {
+    padding: 10px;
+    background-color: #00cec9;    
+}
+
+aside .item {
+    background-color: #81ecec;
+}
+
+aside div:first-child {
+    margin-bottom: 10px;
+}
+
+/*imagenes**/
+
+.img1,
+.img2,
+.img3,
+.img4 {
+    background-size: cover;
+    background-position: center;
+    min-height:40vh;
+    position: relative;
+    padding:0;
+}
+.img1 {
+    background-image: url(assets/almendro.jpg);
+}
+.img2{
+    background-image: url(assets/food.jpg);
+}
+.img3{
+    background-image: url(assets/heritage.jpg);
+}
+.img4{
+    background-image: url(assets/kimono.jpg);
+}
+
+
+
+/************Footer******************/
+
+footer {
+    padding: 10px;
+}
+
+footer .item {
+    background-color:#fdcb6e;
+}
+
+
+
+/****************************************/
+/*********** Media Queries***************/          
+/****************************************/
+
+
+
+
+/*Tablet VERTICAL ( 768px)*************/           
+
+@media (max-width:800px){
+    .content {
+        grid-template-columns: auto;
+        grid-row-gap: 5px;
+    }
+    .content article{
+        margin-right:0;
+    }
+
+}
+
+
+
+
+/*Móvil Horizontal y vertical ( 320px )******/    
+
+@media (max-width:575px){
+
+    header nav {
+        grid-template-columns: 1fr;   
+    }
+
+    .content article {
+        margin-right: 0;
+        grid-template-columns: 1fr;
+    }
+    
+    .content article .item:last-child {
+        grid-column: 1;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,178 @@
+
+*{
+    margin:0;
+    padding: 0;
+}
+
+html{
+    box-sizing:border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: rgb(246, 242, 242);
+    color:white;
+}
+
+main {
+    display:grid;
+    background-color: white;
+    grid-column-gap: 10px;
+    grid-row-gap: 20px;
+    padding: 10px;
+    max-width: 90%;
+    margin: 50px auto;
+}
+
+main > * {
+    background-color: #2d3436;
+    text-align: center;
+    padding: 10px;
+}
+
+.item {
+    padding:6px;
+
+}
+
+
+/*************Header******************/
+
+
+header {
+    display:grid;
+    grid-template-rows: 1fr, 1fr;
+    grid-gap: 5px;
+}
+
+header> * {
+    background-color:#fd79a8;
+}
+
+header nav {
+    display:grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 3fr 1fr;  
+    padding: 10px;  
+}
+
+.header-inf {
+    padding: 10px;
+}
+
+header .item {
+    background-color: #ecb4c8;
+}
+
+
+/************Content******************/
+
+.content {
+    display:grid;
+    grid-template-columns: 70% 30%;
+
+}
+
+.content article {
+    background-color:#0984e3;
+    display:grid;
+    grid-gap: 10px;
+    grid-gap: 10px;
+    padding: 10px;
+    margin-right: 10px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.content article .item {
+    background-color:#74b9ff;
+}
+
+.content article .item:last-child {
+    grid-column: 1/ 3;
+}
+
+/*Aside*/
+
+aside {
+    padding: 10px;
+    background-color: #00cec9;    
+}
+
+aside .item {
+    background-color: #81ecec;
+}
+
+aside div:first-child {
+    margin-bottom: 10px;
+}
+
+
+/************Footer******************/
+
+footer {
+    padding: 10px;
+}
+
+footer .item {
+    background-color:#fdcb6e;
+}
+
+
+
+/****************************************/
+/*********** Media Queries***************/          
+/****************************************/
+
+
+
+
+/*Tablet VERTICAL ( 768px)*************/           
+
+@media (max-width:800px){
+    .content {
+        grid-template-columns: auto;
+        grid-row-gap: 5px;
+    }
+    .content article{
+        margin-right:0;
+    }
+
+}
+
+
+
+
+/*Móvil Horizontal y vertical ( 320px )******/    
+
+@media (max-width:575px){
+
+    header nav {
+        grid-template-columns: 1fr;   
+    }
+
+    .content article {
+        margin-right: 0;
+        grid-template-columns: 1fr;
+    }
+    
+    .content article .item:last-child {
+        grid-column: 1;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
